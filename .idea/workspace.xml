@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2738620-6855-4fd0-80ea-9428126b48a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pythonProject1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_extract.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/get_information.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pre_processing.py" afterDir="false" />
+    <list default="true" id="b2738620-6855-4fd0-80ea-9428126b48a0" name="Changes" comment="feat : 쓰레기 배출량 데이터, 기상 데이터 통합, 결측치 처리(선형보간법 사용), 이상치 제거, 의사결정 트리 모델 구현 및 평가">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Making_Model/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/Making_Model/predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/after_data.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,12 +39,18 @@
   "keyToString": {
     "Python.get_information.executor": "Run",
     "Python.pre_processing.executor": "Run",
+    "Python.predict.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tlgus\Desktop\ML_alternative\pythonProject1\Making_Model" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -67,6 +67,38 @@
       <option name="presentableId" value="Default" />
       <updated>1717026887847</updated>
     </task>
+    <task id="LOCAL-00001" summary="feat : 쓰레기 배출량 데이터, 기상 데이터 통합, 결측치 처리(선형보간법 사용), 이상치 제거, 의사결정 트리 모델 구현 및 평가">
+      <option name="closed" value="true" />
+      <created>1717340551197</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717340551197</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat : 쓰레기 배출량 데이터, 기상 데이터 통합, 결측치 처리(선형보간법 사용), 이상치 제거, 의사결정 트리 모델 구현 및 평가">
+      <option name="closed" value="true" />
+      <created>1717340685391</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717340685391</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat : 쓰레기 배출량 데이터, 기상 데이터 통합, 결측치 처리(선형보간법 사용), 이상치 제거, 의사결정 트리 모델 구현 및 평가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 쓰레기 배출량 데이터, 기상 데이터 통합, 결측치 처리(선형보간법 사용), 이상치 제거, 의사결정 트리 모델 구현 및 평가" />
   </component>
 </project>
