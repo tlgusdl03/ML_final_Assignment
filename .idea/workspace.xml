@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2738620-6855-4fd0-80ea-9428126b48a0" name="Changes" comment="feat : 쓰레기 배출량 데이터, 기상 데이터 통합, 결측치 처리(선형보간법 사용), 이상치 제거, 의사결정 트리 모델 구현 및 평가">
+    <list default="true" id="b2738620-6855-4fd0-80ea-9428126b48a0" name="Changes" comment="feat : 쓰레기 배출량 데이터 정규화 진행, 3개로 범주화하여 classification 문제로 변환">
+      <change afterPath="$PROJECT_DIR$/Making_Model/linear_regression.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Making_Model/linear_regression_result.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Making_Model/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/Making_Model/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/after_data.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +38,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python.get_information.executor": "Run",
     "Python.pre_processing.executor": "Run",
     "Python.predict.executor": "Run",
@@ -83,7 +85,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717340685391</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat : 쓰레기 배출량 데이터 정규화 진행, 3개로 범주화하여 classification 문제로 변환">
+      <option name="closed" value="true" />
+      <created>1717385052282</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717385052282</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,7 +108,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="feat : 쓰레기 배출량 데이터, 기상 데이터 통합, 결측치 처리(선형보간법 사용), 이상치 제거, 의사결정 트리 모델 구현 및 평가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 쓰레기 배출량 데이터, 기상 데이터 통합, 결측치 처리(선형보간법 사용), 이상치 제거, 의사결정 트리 모델 구현 및 평가" />
+    <MESSAGE value="feat : 쓰레기 배출량 데이터 정규화 진행, 3개로 범주화하여 classification 문제로 변환" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 쓰레기 배출량 데이터 정규화 진행, 3개로 범주화하여 classification 문제로 변환" />
   </component>
 </project>
