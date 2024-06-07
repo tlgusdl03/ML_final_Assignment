@@ -1,9 +1,11 @@
 import pandas as pd
-from sklearn.linear_model import Ridge
+from sklearn.datasets import make_regression
+from sklearn.linear_model import Ridge, LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor, plot_tree, DecisionTreeClassifier
 from sklearn.metrics import mean_squared_error, r2_score, accuracy_score
 import matplotlib.pyplot as plt
+from statsmodels.stats.outliers_influence import variance_inflation_factor
 
 
 # 이상치를 제거하기 위한 함수 정의
@@ -26,29 +28,57 @@ data.set_index('date', inplace=True)
 clean_data = remove_outliers(data, 'dscamt')
 #clean_data = remove_outliers(clean_data, 'RN_ST')
 
-# 데이터 범주화
-clean_data['dscamt_normalized'] = pd.qcut(clean_data['dscamt'], 3, labels=False)
+# # 상관계수 계산
+# correlation_matrix = data[['SKY', 'PRE', 'WF']].corr()
+# print("Correlation matrix:\n", correlation_matrix)
 
-# 특성과 타겟 변수 분리
-# X_clean = clean_data.drop('dscamt', axis=1)
-X_clean = clean_data[['PRE', 'WF', 'RN_ST', 'MIN', 'MAX']]
-y_clean = clean_data['dscamt_normalized']
+# # VIF 계산
+# X_data = clean_data[['SKY', 'PRE', 'WF']]
+#
+#
+# vif_data = pd.DataFrame()
+# vif_data["feature"] = X_data.columns
+# vif_data["VIF"] = [variance_inflation_factor(X_data.values, i) for i in range(len(X_data.columns))]
+# print(vif_data)
 
-# 데이터를 훈련 세트와 테스트 세트로 분리
-X_train_clean, X_test_clean, y_train_clean, y_test_clean = train_test_split(X_clean, y_clean, test_size=0.2, random_state=42)
+
+
+# # 선형 회귀 모델
+# linear_model = LinearRegression()
+# linear_model.fit(X_train_clean, y_train_clean)
+# y_pred_linear = linear_model.predict(X_test_clean)
+# print("Linear Regression R^2:", r2_score(y_test_clean, y_pred_linear))
+#
+# # 의사결정 트리 모델
+# tree_model = DecisionTreeRegressor(max_depth=5)
+# tree_model.fit(X_train_clean, y_train_clean)
+# y_pred_tree = tree_model.predict(X_test_clean)
+# print("Decision Tree R^2:", r2_score(y_test_clean, y_pred_tree))
+# print("Feature Importances:", tree_model.feature_importances_)
 
 # training error, test error를 저장할 리스트
 train_accuracies = []
 test_accuracies = []
-tree_sizes = range(2,101)
+category_counts = range(1,20)
 
 # # 릿지 회귀 모델 생성 및 훈련
 # ridge_model = Ridge(alpha=1.0)
 # ridge_model.fit(X_train_clean, y_train_clean)
 
 # 의사결정트리 모델 생성 및 훈련 (가지치기 적용)
-for size in tree_sizes:
-    pruned_tree_model = DecisionTreeClassifier(max_leaf_nodes=size, random_state=42)
+for categories in category_counts:
+    # 데이터 범주화
+    clean_data['dscamt_normalized'] = pd.qcut(clean_data['dscamt'], q=categories, labels=False)
+
+    # 특성과 타겟 변수 분리
+    X_clean = clean_data[['PRE', 'WF', 'RN_ST', 'MIN', 'MAX']]
+    Y_clean = clean_data['dscamt_normalized']
+
+    # 데이터를 훈련 세트와 테스트 세트로 분리
+    X_train_clean, X_test_clean, y_train_clean, y_test_clean = train_test_split(X_clean, Y_clean, test_size=0.2,
+                                                                                random_state=42)
+
+    pruned_tree_model = DecisionTreeClassifier(max_leaf_nodes=20, random_state=42)
     pruned_tree_model.fit(X_train_clean, y_train_clean)
 
     # 훈련 데이터에 대한 예측 및 정확도 계산
@@ -77,11 +107,11 @@ for size in tree_sizes:
 
 # 의사결정 트리 시각화
 plt.figure(figsize=(10,6))
-plt.plot(tree_sizes, train_accuracies, label='On training data', linestyle='-', marker='o')
-plt.plot(tree_sizes, test_accuracies, label='On test data', linestyle='--', marker='x')
-plt.xlabel('Size of tree (number of nodes)')
+plt.plot(category_counts, train_accuracies, label='On training data', linestyle='-', marker='o')
+plt.plot(category_counts, test_accuracies, label='On test data', linestyle='--', marker='x')
+plt.xlabel('Number of Categories')
 plt.ylabel('Accuracy')
-plt.title('Model Complexity vs. Accuracy')
+plt.title('Impact of Number of Categories on Model Performance')
 plt.legend()
 plt.grid(True)
 plt.show()

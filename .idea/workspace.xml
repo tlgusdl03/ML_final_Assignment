@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2738620-6855-4fd0-80ea-9428126b48a0" name="Changes" comment="feat : linear_regression 테스트 결과 추가">
+    <list default="true" id="b2738620-6855-4fd0-80ea-9428126b48a0" name="Changes" comment="feat : Decision Tree의 노드 개수에 따른 Training_acc, Test_acc 추가">
+      <change afterPath="$PROJECT_DIR$/Making_Model/correlation_find.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Making_Model/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/Making_Model/predict.py" afterDir="false" />
     </list>
@@ -99,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717469551626</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat : Decision Tree의 노드 개수에 따른 Training_acc, Test_acc 추가">
+      <option name="closed" value="true" />
+      <created>1717716689606</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717716689606</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,6 +127,7 @@
     <MESSAGE value="feat : 쓰레기 배출량 데이터, 기상 데이터 통합, 결측치 처리(선형보간법 사용), 이상치 제거, 의사결정 트리 모델 구현 및 평가" />
     <MESSAGE value="feat : 쓰레기 배출량 데이터 정규화 진행, 3개로 범주화하여 classification 문제로 변환" />
     <MESSAGE value="feat : linear_regression 테스트 결과 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : linear_regression 테스트 결과 추가" />
+    <MESSAGE value="feat : Decision Tree의 노드 개수에 따른 Training_acc, Test_acc 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : Decision Tree의 노드 개수에 따른 Training_acc, Test_acc 추가" />
   </component>
 </project>
